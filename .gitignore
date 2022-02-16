@@ -3,6 +3,25 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.packages
+.pub-cache/
+.pub/
+/build/
+**.g.dart
+**.mocks.dart
+*.dill
+pubspec.lock
+
 # Node artifact files
 node_modules/
 dist/
@@ -22,9 +41,6 @@ dist/
 # Maven
 target/
 dist/
-
-# JetBrains IDE
-.idea/
 
 # Unit test reports
 TEST*.xml
