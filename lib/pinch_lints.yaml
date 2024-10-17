@@ -5,6 +5,10 @@ analyzer:
     dead_code: error
 
   exclude:
+    # Native Folders
+    - "**/android/**"
+    - "**/ios/**"
+
     - "**/*.g.dart"
 
 linter:
