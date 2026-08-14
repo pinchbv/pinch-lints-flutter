@@ -18,26 +18,25 @@ analyzer:
     # Assets
     - "**/assets/**"
 
-errors:
-  avoid_dynamic_calls: error
-  avoid_empty_else: error
-  avoid_types_as_parameter_names: error
-  cancel_subscriptions: error
-  close_sinks: error
-  dead_code: error
-  hash_and_equals: error
-  literal_only_boolean_expressions: error
-  no_duplicate_case_values: error
-  prefer_void_to_null: error
-  throw_in_finally: error
-  unnecessary_statements: error
-  unrelated_type_equality_checks: error
-  unsafe_html: error
-  avoid_void_async: warning
-  always_declare_return_types: error
-  annotate_overrides: error
-  await_only_futures: error
-  constant_identifier_names: error
+  errors:
+    avoid_dynamic_calls: error
+    avoid_empty_else: error
+    avoid_types_as_parameter_names: error
+    cancel_subscriptions: error
+    close_sinks: error
+    dead_code: error
+    hash_and_equals: error
+    literal_only_boolean_expressions: error
+    no_duplicate_case_values: error
+    prefer_void_to_null: error
+    throw_in_finally: error
+    unnecessary_statements: error
+    unrelated_type_equality_checks: error
+    avoid_void_async: warning
+    always_declare_return_types: error
+    annotate_overrides: error
+    await_only_futures: error
+    constant_identifier_names: error
 
 # Rules below are only the ones not already enabled through flutter_lints
 # (which includes the core and recommended sets from package:lints).
