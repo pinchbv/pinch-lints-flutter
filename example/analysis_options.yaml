@@ -1,10 +1,10 @@
-include: package:pinch_lints/pinch_lints.yaml
+include: package:apadmi_lints/apadmi_lints.yaml
 
 # Custom rules ship as an analyzer plugin. Note that the `plugins` section
 # cannot be inherited through `include`, so every project must declare it in
 # its own root analysis_options.yaml. Consumers would normally use a version
-# constraint (`pinch_lints: ^3.0.0`); this example uses a path to exercise
+# constraint (`apadmi_lints: ^3.0.0`); this example uses a path to exercise
 # the local plugin source.
 plugins:
-  pinch_lints:
+  apadmi_lints:
     path: ../

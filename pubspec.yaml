@@ -1,7 +1,7 @@
-name: pinch_lints
-description: The Pinch linter
+name: apadmi_lints
+description: The Apadmi linter
 version: 3.0.0
-repository: https://github.com/pinchbv/pinch-lints-flutter
+repository: https://github.com/pinchbv/apadmi-lints-flutter
 
 environment:
   sdk: ^3.10.0

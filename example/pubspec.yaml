@@ -1,5 +1,5 @@
 name: example
-description: A project that showcases how to enable the recommended lints for Flutter apps, packages, and plugins within Pinch.
+description: A project that showcases how to enable the recommended lints for Flutter apps, packages, and plugins within Apadmi.
 
 environment:
   sdk: ^3.10.0
@@ -9,5 +9,5 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  pinch_lints:
+  apadmi_lints:
     path: ../

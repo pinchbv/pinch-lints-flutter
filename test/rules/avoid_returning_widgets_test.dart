@@ -1,5 +1,5 @@
 import 'package:analyzer_testing/analysis_rule/analysis_rule.dart';
-import 'package:pinch_lints/src/rules/avoid_returning_widgets.dart';
+import 'package:apadmi_lints/src/rules/avoid_returning_widgets.dart';
 import 'package:test_reflective_loader/test_reflective_loader.dart';
 
 void main() {
