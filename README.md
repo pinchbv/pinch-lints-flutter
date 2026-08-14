@@ -6,18 +6,77 @@ rules and escalates a number of important lints to analysis errors.
 
 ## Usage
 
-Add `pinch_lints` to your `dev_dependencies` in `pubspec.yaml`:
+1. Add `pinch_lints` to your `dev_dependencies` in `pubspec.yaml`:
 
-```yaml
-dev_dependencies:
-  pinch_lints: ^2.1.0
+   ```yaml
+   dev_dependencies:
+     pinch_lints: ^3.0.0
+   ```
+
+2. Include the rule set in your `analysis_options.yaml`:
+
+   ```yaml
+   include: package:pinch_lints/pinch_lints.yaml
+   ```
+
+3. Enable the analyzer plugin for the custom rules by adding a top-level
+   `plugins` section to the root `analysis_options.yaml`:
+
+   ```yaml
+   plugins:
+     pinch_lints: ^3.0.0
+   ```
+
+   > **Note:** the `plugins` section cannot be inherited through `include`, so
+   > it must be declared in the root `analysis_options.yaml` of every project —
+   > the `include` line alone does not activate the custom rules.
+
+4. Restart the Dart Analysis Server so your IDE picks up the plugin (VS Code:
+   "Dart: Restart Analysis Server" from the command palette; IntelliJ/Android
+   Studio: the restart icon in the Dart Analysis panel).
+
+Version 3.x requires Dart 3.10 / Flutter 3.38 or newer (in practice a Flutter
+version whose SDK ships `meta` 1.18.0 or newer, i.e. Flutter 3.44+). Older
+projects can stay on `pinch_lints` 2.x, which is identical except for the
+custom rules.
+
+## Custom rules
+
+On top of the standard analyzer lints, this package ships its own rules as a
+native analyzer plugin.
+
+### [avoid_returning_widgets](doc/rules/avoid_returning_widgets.md)
+
+Flags helper functions, methods, and getters that return `Widget` (or a
+subtype). Returning widgets from helpers hides part of the widget tree from
+Flutter, hurting rebuild granularity, const-ability, and DevTools inspection.
+Extract a `StatelessWidget` subclass instead. Overrides such as `build` are
+exempt.
+
+```dart
+// Bad
+Widget _buildHeader() => const Text('header');
+Widget get _spacer => const SizedBox(height: 8);
+
+// Good
+class _Header extends StatelessWidget {
+  const _Header();
+
+  @override
+  Widget build(BuildContext context) => const Text('header');
+}
 ```
 
-Then include it in your `analysis_options.yaml`:
+See the [full rule documentation](doc/rules/avoid_returning_widgets.md) for
+do/don't examples, the rationale, and how to suppress or disable the rule.
 
-```yaml
-include: package:pinch_lints/pinch_lints.yaml
-```
+Known issue: on some Dart SDK versions, `dart analyze` on the command line
+prints non-plugin diagnostics twice while a plugin is enabled
+([dart-lang/sdk#63497](https://github.com/dart-lang/sdk/issues/63497), fixed
+upstream). IDE analysis is unaffected. If the analysis server crashes after
+changing the `plugins` section, restart it (VS Code: "Dart: Restart Analysis
+Server"); if the crash persists, clear the server cache by removing
+`~/.dartServer`.
 
 ## Formatter settings
 
