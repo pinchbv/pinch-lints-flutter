@@ -23,24 +23,69 @@ analyzer:
     - "**/assets/**"
 
   errors:
+    # Analyzer diagnostic (not a lint rule)
+    dead_code: error
+
+    # Runtime crashes and wrong results
     avoid_dynamic_calls: error
+    avoid_web_libraries_in_flutter: error
+    conditional_uri_does_not_exist: error
+    no_logic_in_create_state: error
+    null_check_on_nullable_type_parameter: error
+    null_closures: error
+    use_build_context_synchronously: error
+    valid_regexps: error
+
+    # Swallowed exceptions
     avoid_empty_else: error
-    avoid_types_as_parameter_names: error
+    avoid_void_async: error
+    control_flow_in_finally: error
+    discarded_futures: error
+    throw_in_finally: error
+    unawaited_futures: error
+
+    # Leaks
     cancel_subscriptions: error
     close_sinks: error
-    dead_code: error
+
+    # Always-wrong comparisons, unreachable branches, no-op statements
+    avoid_types_as_parameter_names: error
+    collection_methods_unrelated_type: error
+    exhaustive_cases: error
     hash_and_equals: error
     literal_only_boolean_expressions: error
     no_duplicate_case_values: error
-    prefer_void_to_null: error
-    throw_in_finally: error
+    no_wildcard_variable_uses: error
+    test_types_in_equals: error
     unnecessary_statements: error
     unrelated_type_equality_checks: error
-    avoid_void_async: warning
-    always_declare_return_types: error
-    annotate_overrides: error
-    await_only_futures: error
-    constant_identifier_names: error
+
+    # Fix before merging, but rarely a crash.
+    avoid_print: warning
+    avoid_shadowing_type_parameters: warning
+    avoid_slow_async_io: warning
+    avoid_type_to_string: warning
+    avoid_unused_constructor_parameters: warning
+    cast_nullable_to_non_nullable: warning
+    curly_braces_in_flow_control_structures: warning
+    depend_on_referenced_packages: warning
+    do_not_use_environment: warning
+    empty_statements: warning
+    implicit_reopen: warning
+    library_private_types_in_public_api: warning
+    no_runtimeType_toString: warning
+    no_self_assignments: warning
+    prefer_is_empty: warning
+    prefer_typing_uninitialized_variables: warning
+    prefer_void_to_null: warning
+    provide_deprecation_message: warning
+    recursive_getters: warning
+    secure_pubspec_urls: warning
+    sort_pub_dependencies: warning
+    type_annotate_public_apis: warning
+    unreachable_from_main: warning
+    use_late_for_private_fields_and_variables: warning
+    use_string_buffers: warning
 
 # Rules below are only the ones not already enabled through flutter_lints
 # (which includes the core and recommended sets from package:lints).
