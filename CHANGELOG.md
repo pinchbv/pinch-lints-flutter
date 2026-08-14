@@ -1,5 +1,10 @@
 # 3.0.0
 
+* **Breaking:** the package is renamed from `pinch_lints` to `apadmi_lints` as
+  part of the Pinch → Apadmi rebrand. Update your `pubspec.yaml` dependency,
+  the `include:` line and `plugins` section in `analysis_options.yaml`, and
+  any `// ignore: pinch_lints/...` comments (the prefix is now
+  `apadmi_lints/...`).
 * Add the `avoid_returning_widgets` custom rule, shipped as a native analyzer
   plugin. It flags helper functions, methods, and getters that return a
   `Widget` (or subtype); extract a `StatelessWidget` instead. Enable it by

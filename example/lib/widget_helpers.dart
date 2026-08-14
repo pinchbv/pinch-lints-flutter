@@ -4,16 +4,16 @@ import 'package:flutter/widgets.dart';
 // and getters that return widgets. The ignores below mark the planted
 // violations; remove one to see the diagnostic appear in `dart analyze`.
 
-// ignore: pinch_lints/avoid_returning_widgets, custom rule for Pinch
+// ignore: apadmi_lints/avoid_returning_widgets, custom rule for Apadmi
 Widget buildTitle() => const Text('title');
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({super.key});
 
-  // ignore: pinch_lints/avoid_returning_widgets, custom rule for Pinch
+  // ignore: apadmi_lints/avoid_returning_widgets, custom rule for Apadmi
   Widget get _spacer => const SizedBox(height: 8);
 
-  // ignore: pinch_lints/avoid_returning_widgets, custom rule for Pinch
+  // ignore: apadmi_lints/avoid_returning_widgets, custom rule for Apadmi
   Widget _buildBody(BuildContext context) => const Text('body');
 
   // The `build` override itself is exempt from the rule.

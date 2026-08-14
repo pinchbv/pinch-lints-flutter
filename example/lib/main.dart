@@ -1,4 +1,4 @@
-import 'package:example/foo.dart'; // ignore: prefer_relative_imports, custom rule for Pinch
+import 'package:example/foo.dart'; // ignore: prefer_relative_imports, custom rule for Apadmi
 
 void main() {
   const String _partOne = 'Hello';

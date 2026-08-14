@@ -89,14 +89,14 @@ The rule does not report:
 
 ## Usage
 
-The rule ships with the `pinch_lints` analyzer plugin and is enabled by
+The rule ships with the `apadmi_lints` analyzer plugin and is enabled by
 default once the plugin is set up (see the [README](../../README.md#usage)).
 
 Suppress a single occurrence with an ignore comment (the plugin-name prefix is
 required):
 
 ```dart
-// ignore: pinch_lints/avoid_returning_widgets
+// ignore: apadmi_lints/avoid_returning_widgets
 Widget buildLegacyHeader() => const Text('header');
 ```
 
@@ -104,7 +104,7 @@ Or disable the rule for a whole project in `analysis_options.yaml`:
 
 ```yaml
 plugins:
-  pinch_lints:
+  apadmi_lints:
     version: ^3.0.0
     diagnostics:
       avoid_returning_widgets: false

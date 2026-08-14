@@ -1,22 +1,22 @@
-# pinch_lints
+# apadmi_lints
 
-The Pinch lint rule set for Dart and Flutter projects, built on top of
+The Apadmi lint rule set for Dart and Flutter projects, built on top of
 [flutter_lints](https://pub.dev/packages/flutter_lints). It enables a stricter set of additional
 rules and escalates a number of important lints to analysis errors.
 
 ## Usage
 
-1. Add `pinch_lints` to your `dev_dependencies` in `pubspec.yaml`:
+1. Add `apadmi_lints` to your `dev_dependencies` in `pubspec.yaml`:
 
    ```yaml
    dev_dependencies:
-     pinch_lints: ^3.0.0
+     apadmi_lints: ^3.0.0
    ```
 
 2. Include the rule set in your `analysis_options.yaml`:
 
    ```yaml
-   include: package:pinch_lints/pinch_lints.yaml
+   include: package:apadmi_lints/apadmi_lints.yaml
    ```
 
 3. Enable the analyzer plugin for the custom rules by adding a top-level
@@ -24,7 +24,7 @@ rules and escalates a number of important lints to analysis errors.
 
    ```yaml
    plugins:
-     pinch_lints: ^3.0.0
+     apadmi_lints: ^3.0.0
    ```
 
    > **Note:** the `plugins` section cannot be inherited through `include`, so
@@ -37,7 +37,7 @@ rules and escalates a number of important lints to analysis errors.
 
 Version 3.x requires Dart 3.10 / Flutter 3.38 or newer (in practice a Flutter
 version whose SDK ships `meta` 1.18.0 or newer, i.e. Flutter 3.44+). Older
-projects can stay on `pinch_lints` 2.x, which is identical except for the
+projects can stay on `apadmi_lints` 2.x, which is identical except for the
 custom rules.
 
 ## Custom rules
@@ -263,7 +263,7 @@ but rarely a crash:
 - [use_late_for_private_fields_and_variables](https://dart.dev/tools/linter-rules/use_late_for_private_fields_and_variables)
 - [use_string_buffers](https://dart.dev/tools/linter-rules/use_string_buffers)
 
-The authoritative list lives in [`lib/pinch_lints.yaml`](lib/pinch_lints.yaml) under
+The authoritative list lives in [`lib/apadmi_lints.yaml`](lib/apadmi_lints.yaml) under
 `analyzer: errors:`.
 
 ## Excluded files
