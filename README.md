@@ -193,28 +193,78 @@ documentation, which explains the rule and includes good/bad examples.
 ## Stricter severities
 
 Violations of the following rules are reported as **errors** instead of the default severity, so
-they fail analysis outright:
+they fail analysis outright.
 
-- [always_declare_return_types](https://dart.dev/tools/linter-rules/always_declare_return_types)
-- [annotate_overrides](https://dart.dev/tools/linter-rules/annotate_overrides)
+Runtime crashes and wrong results:
+
 - [avoid_dynamic_calls](https://dart.dev/tools/linter-rules/avoid_dynamic_calls)
+- [avoid_web_libraries_in_flutter](https://dart.dev/tools/linter-rules/avoid_web_libraries_in_flutter)
+- [conditional_uri_does_not_exist](https://dart.dev/tools/linter-rules/conditional_uri_does_not_exist)
+- [no_logic_in_create_state](https://dart.dev/tools/linter-rules/no_logic_in_create_state)
+- [null_check_on_nullable_type_parameter](https://dart.dev/tools/linter-rules/null_check_on_nullable_type_parameter)
+- [null_closures](https://dart.dev/tools/linter-rules/null_closures)
+- [use_build_context_synchronously](https://dart.dev/tools/linter-rules/use_build_context_synchronously)
+- [valid_regexps](https://dart.dev/tools/linter-rules/valid_regexps)
+
+Swallowed exceptions:
+
 - [avoid_empty_else](https://dart.dev/tools/linter-rules/avoid_empty_else)
-- [avoid_types_as_parameter_names](https://dart.dev/tools/linter-rules/avoid_types_as_parameter_names)
-- [await_only_futures](https://dart.dev/tools/linter-rules/await_only_futures)
+- [avoid_void_async](https://dart.dev/tools/linter-rules/avoid_void_async)
+- [control_flow_in_finally](https://dart.dev/tools/linter-rules/control_flow_in_finally)
+- [discarded_futures](https://dart.dev/tools/linter-rules/discarded_futures)
+- [throw_in_finally](https://dart.dev/tools/linter-rules/throw_in_finally)
+- [unawaited_futures](https://dart.dev/tools/linter-rules/unawaited_futures)
+
+Leaks:
+
 - [cancel_subscriptions](https://dart.dev/tools/linter-rules/cancel_subscriptions)
 - [close_sinks](https://dart.dev/tools/linter-rules/close_sinks)
-- [constant_identifier_names](https://dart.dev/tools/linter-rules/constant_identifier_names)
-- [dead_code](https://dart.dev/tools/diagnostic-messages#dead_code)
+
+Always-wrong comparisons, unreachable branches, and no-op statements:
+
+- [avoid_types_as_parameter_names](https://dart.dev/tools/linter-rules/avoid_types_as_parameter_names)
+- [collection_methods_unrelated_type](https://dart.dev/tools/linter-rules/collection_methods_unrelated_type)
+- [dead_code](https://dart.dev/tools/diagnostic-messages#dead_code) (analyzer diagnostic)
+- [exhaustive_cases](https://dart.dev/tools/linter-rules/exhaustive_cases)
 - [hash_and_equals](https://dart.dev/tools/linter-rules/hash_and_equals)
 - [literal_only_boolean_expressions](https://dart.dev/tools/linter-rules/literal_only_boolean_expressions)
 - [no_duplicate_case_values](https://dart.dev/tools/linter-rules/no_duplicate_case_values)
-- [prefer_void_to_null](https://dart.dev/tools/linter-rules/prefer_void_to_null)
-- [throw_in_finally](https://dart.dev/tools/linter-rules/throw_in_finally)
+- [no_wildcard_variable_uses](https://dart.dev/tools/linter-rules/no_wildcard_variable_uses)
+- [test_types_in_equals](https://dart.dev/tools/linter-rules/test_types_in_equals)
 - [unnecessary_statements](https://dart.dev/tools/linter-rules/unnecessary_statements)
 - [unrelated_type_equality_checks](https://dart.dev/tools/linter-rules/unrelated_type_equality_checks)
 
-In addition, [avoid_void_async](https://dart.dev/tools/linter-rules/avoid_void_async) is escalated
-to a **warning**.
+In addition, the following rules are escalated to **warnings** — issues to fix before merging,
+but rarely a crash:
+
+- [avoid_print](https://dart.dev/tools/linter-rules/avoid_print)
+- [avoid_shadowing_type_parameters](https://dart.dev/tools/linter-rules/avoid_shadowing_type_parameters)
+- [avoid_slow_async_io](https://dart.dev/tools/linter-rules/avoid_slow_async_io)
+- [avoid_type_to_string](https://dart.dev/tools/linter-rules/avoid_type_to_string)
+- [avoid_unused_constructor_parameters](https://dart.dev/tools/linter-rules/avoid_unused_constructor_parameters)
+- [cast_nullable_to_non_nullable](https://dart.dev/tools/linter-rules/cast_nullable_to_non_nullable)
+- [curly_braces_in_flow_control_structures](https://dart.dev/tools/linter-rules/curly_braces_in_flow_control_structures)
+- [depend_on_referenced_packages](https://dart.dev/tools/linter-rules/depend_on_referenced_packages)
+- [do_not_use_environment](https://dart.dev/tools/linter-rules/do_not_use_environment)
+- [empty_statements](https://dart.dev/tools/linter-rules/empty_statements)
+- [implicit_reopen](https://dart.dev/tools/linter-rules/implicit_reopen)
+- [library_private_types_in_public_api](https://dart.dev/tools/linter-rules/library_private_types_in_public_api)
+- [no_runtimeType_toString](https://dart.dev/tools/linter-rules/no_runtimetype_tostring)
+- [no_self_assignments](https://dart.dev/tools/linter-rules/no_self_assignments)
+- [prefer_is_empty](https://dart.dev/tools/linter-rules/prefer_is_empty)
+- [prefer_typing_uninitialized_variables](https://dart.dev/tools/linter-rules/prefer_typing_uninitialized_variables)
+- [prefer_void_to_null](https://dart.dev/tools/linter-rules/prefer_void_to_null)
+- [provide_deprecation_message](https://dart.dev/tools/linter-rules/provide_deprecation_message)
+- [recursive_getters](https://dart.dev/tools/linter-rules/recursive_getters)
+- [secure_pubspec_urls](https://dart.dev/tools/linter-rules/secure_pubspec_urls)
+- [sort_pub_dependencies](https://dart.dev/tools/linter-rules/sort_pub_dependencies)
+- [type_annotate_public_apis](https://dart.dev/tools/linter-rules/type_annotate_public_apis)
+- [unreachable_from_main](https://dart.dev/tools/linter-rules/unreachable_from_main)
+- [use_late_for_private_fields_and_variables](https://dart.dev/tools/linter-rules/use_late_for_private_fields_and_variables)
+- [use_string_buffers](https://dart.dev/tools/linter-rules/use_string_buffers)
+
+The authoritative list lives in [`lib/pinch_lints.yaml`](lib/pinch_lints.yaml) under
+`analyzer: errors:`.
 
 ## Excluded files
 
